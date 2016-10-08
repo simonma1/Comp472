@@ -32,12 +32,19 @@ public abstract class Tree<T> {
 
     public abstract void traverse(Node<T> root);
 
-    protected  void addChildToNode(Node<T> node){
+    public List<State> findPossibleMoves(Node node){
         State rootState = (State)node.getData();
         List<State> states = rootState.possibleMoves();
+        return states;
+
+    }
+
+    protected  void addChildToNode(Node<T> node){
+        List<State> states = findPossibleMoves(node);
 
         for (State s : states  ) {
             Node<T> children = new Node(s);
+            children.setParent(node);
             node.addChild(children);
         }
     }

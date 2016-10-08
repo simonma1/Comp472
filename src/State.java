@@ -14,6 +14,7 @@ public class State {
     * That computation could be generated as a heuristic
     * */
 
+
     private String stateOfPuzzle;
     private char[][] stateArr = new char[3][3];
     private int[] blankPosition = {-1,-1};
@@ -30,6 +31,14 @@ public class State {
     public State(char[][] stateArr, int[] blankPosition){
         this.stateArr = stateArr;
         this.blankPosition = blankPosition;
+    }
+
+    public void setStateOfPuzzle(String stateOfPuzzle) {
+        this.stateOfPuzzle = stateOfPuzzle;
+    }
+
+    public String getStateOfPuzzle() {
+        return this.stateOfPuzzle;
     }
 
     public char[][] convertStringToArray(String state){
@@ -81,18 +90,22 @@ public class State {
 
         if(blankRow > 0 && blankRow <=2){//Move up
             State movedUp =moveUp(blankPosition);
+            movedUp.setStateOfPuzzle(movedUp.toString());
             moves.add(movedUp);
 
         }if(blankRow >= 0 && blankRow < 2){//Move down
             State movedDown =moveDown(blankPosition);
+            movedDown.setStateOfPuzzle(movedDown.toString());
             moves.add(movedDown);
 
         }if(blankCol > 0 && blankCol <= 2){//Move left
             State movedLeft =moveLeft(blankPosition);
+            movedLeft.setStateOfPuzzle(movedLeft.toString());
             moves.add(movedLeft);
 
         }if(blankCol >= 0 && blankCol <2){//Move right
             State movedRight =moveRight(blankPosition);
+            movedRight.setStateOfPuzzle(movedRight.toString());
             moves.add(movedRight);
         }
 

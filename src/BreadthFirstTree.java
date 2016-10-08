@@ -21,7 +21,7 @@ public class BreadthFirstTree<T> extends Tree<T> {
     @Override
     public void traverse(Node<T> root) {
         try {
-            System.out.println(root.toString());
+            System.out.println((((State)root.getData()).getStateOfPuzzle()));
             if(root.isGoalState(goalState)) {//checks to see if root might be a goal state
                 System.out.println("Goal State Found");
 

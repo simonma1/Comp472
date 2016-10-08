@@ -33,6 +33,10 @@ public class Node<T> implements Comparable<T>{
         return parent;
     }
 
+    public void setParent(Node<T> parent){
+        this.parent = parent;
+    }
+
     public void addChild(Node<T> el){
         children.add(el);
     }

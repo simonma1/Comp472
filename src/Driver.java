@@ -25,6 +25,7 @@ public class Driver {
         System.out.println("The initial state is: " + initialState);
         System.out.println("The goal state is: " + goalStateString);
 
+
         State rootState = new State(initialState);
         State goalState = new State(goalStateString);
         Node<State> rootNode = new Node<State>(rootState);
