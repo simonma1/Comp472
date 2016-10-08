@@ -31,7 +31,7 @@ public class BreadthFirstTree<T> extends Tree<T> {
 
                 List<Node<T>> children = root.getChildren();
                 for (Node<T> el : children) {
-                    ((LinkedList<Node<T>>) fringe).add(el);
+                     fringe.add(el);
 
                 }
 
