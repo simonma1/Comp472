@@ -29,8 +29,9 @@ public class Driver {
         State rootState = new State(initialState);
         State goalState = new State(goalStateString);
         Node<State> rootNode = new Node<State>(rootState);
-        BreadthFirstTree<Node<State>> tree = new BreadthFirstTree(rootNode, goalState);
+        //BreadthFirstTree<Node<State>> tree = new BreadthFirstTree(rootNode, goalState);
         //DepthFirstTree<Node<State>> tree = new DepthFirstTree(rootNode,goalState);
+        AStarTree<Node<State>> tree = new AStarTree(rootNode,goalState);
 
         tree.traverse();
 

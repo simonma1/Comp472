@@ -9,8 +9,11 @@ public class Node<T> implements Comparable<T>{
     private T data;
     private List<Node<T>> children = new ArrayList<>();
     private Node<T> parent;
+    private int gValue = 0;//cost to get to that node from the start,  in this case the depth
     private int fValue = 0;
+    private int hValue = 0;
     private boolean visited = false;
+
 
     public Node(T data){
         this.data = data;
@@ -23,6 +26,26 @@ public class Node<T> implements Comparable<T>{
 
     public void setfValue(int fValue) {
         this.fValue = fValue;
+    }
+
+    public int getfValue() {
+        return fValue;
+    }
+
+    public int getgValue() {
+        return gValue;
+    }
+
+    public void setgValue(int gValue) {
+        this.gValue = gValue;
+    }
+
+    public int gethValue() {
+        return hValue;
+    }
+
+    public void sethValue(int gValue) {
+        this.hValue = hValue;
     }
 
     public List<Node<T>> getChildren(){
