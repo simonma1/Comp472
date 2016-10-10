@@ -40,6 +40,9 @@ public class State {
     public String getStateOfPuzzle() {
         return this.stateOfPuzzle;
     }
+    public char[][] getStateArr() {
+        return stateArr;
+    }
 
     public char[][] convertStringToArray(String state){
         int index = 0;

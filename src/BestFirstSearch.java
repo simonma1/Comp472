@@ -1,16 +1,15 @@
 import java.util.*;
 
 /**
- * Created by Simon on 2016-10-07.
+ * Created by Simon on 2016-10-09.
  */
-public class AStarTree<T> extends Tree<T> {
-
+public class BestFirstSearch<T> extends Tree<T>{
     private Map<String,Node> closedSet = new HashMap<String,Node>();
     private int numOfMoves = 0;
     private LinkedList<State> moves = new LinkedList();
 
 
-    public AStarTree(Node<T> root, State goalState){
+    public BestFirstSearch(Node<T> root, State goalState){
         super(root, goalState);
         fringe = new PriorityQueue<>();
         root.setfValue(0);
@@ -46,19 +45,12 @@ public class AStarTree<T> extends Tree<T> {
                 printSolution();
             }else{
                 List<State> children = findPossibleMoves(currentNode);
-                int currentGValue;
-                if(currentNode.getParent() == null){
-                    currentGValue = 0;
-                }else {
-                    currentGValue = currentNode.getParent().getgValue() + 1;
-                }
 
                 for(State child : children) {
                     Node<T> childNode = new Node(child);
-                    childNode.setgValue(currentGValue);
                     int heuristicScore = calculateHeuristic(child);
                     childNode.sethValue(heuristicScore);
-                    childNode.setfValue(currentGValue + heuristicScore);
+                    childNode.setfValue(heuristicScore);
                     childNode.setParent(currentNode);
                     if(!closedSet.containsKey(child.getStateOfPuzzle())){
                         ((PriorityQueue) fringe).add(childNode);

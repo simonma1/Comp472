@@ -5,11 +5,7 @@ import java.util.*;
  */
 public class BreadthFirstTree<T> extends Tree<T> {
 
-    /*
-    * dequeue elements as they are reached
-    * add base case
-    * Add recursion
-    * */
+
 
     public BreadthFirstTree(Node<T> root, State goalState){
         super(root, goalState);
@@ -18,6 +14,7 @@ public class BreadthFirstTree<T> extends Tree<T> {
     }
 
 
+    
     @Override
     public void traverse(Node<T> root) {
         try {

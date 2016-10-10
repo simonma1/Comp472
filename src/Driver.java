@@ -10,6 +10,8 @@ public class Driver {
         Scanner keyboard = new Scanner(System.in);
         String goalStateString;
         String initialState = "12345678B";
+        long startTime;
+        long endTime;
 
         /*
         System.out.println("Please enter the goal state of the 8 puzzle");
@@ -21,19 +23,28 @@ public class Driver {
 
         goalStateString="1238B4765";
 
-        initialState = generateInitialState("12345678B");
+
+        //initialState = generateInitialState("2317B8654");
+        initialState = "2317B8654";//For testing
         System.out.println("The initial state is: " + initialState);
         System.out.println("The goal state is: " + goalStateString);
 
 
+        startTime = System.currentTimeMillis();
         State rootState = new State(initialState);
         State goalState = new State(goalStateString);
         Node<State> rootNode = new Node<State>(rootState);
         //BreadthFirstTree<Node<State>> tree = new BreadthFirstTree(rootNode, goalState);
         //DepthFirstTree<Node<State>> tree = new DepthFirstTree(rootNode,goalState);
-        AStarTree<Node<State>> tree = new AStarTree(rootNode,goalState);
+        BestFirstSearch<Node<State>> tree = new BestFirstSearch(rootNode,goalState);
 
         tree.traverse();
+
+        endTime = System.currentTimeMillis();
+
+        long totalTime = (endTime - startTime);
+
+        System.out.println("It took " + totalTime + " milliseconds to find the solution");
 
     }
 

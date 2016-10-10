@@ -91,7 +91,7 @@ public class Node<T> implements Comparable<T>{
 
     @Override
     public int compareTo(T o) {
-       return ((Node<T>)o).fValue - this.fValue;
+       return this.fValue - ((Node<T>)o).fValue;
 
     }
 }

@@ -12,6 +12,7 @@ public abstract class Tree<T> {
     protected State  goalState;
     protected boolean goalStateFound = false;
 
+
     public Tree(Node<T> root){
         this.root = root;
     }
