@@ -36,7 +36,8 @@ public class Driver {
         Node<State> rootNode = new Node<State>(rootState);
         //BreadthFirstTree<Node<State>> tree = new BreadthFirstTree(rootNode, goalState);
         //DepthFirstTree<Node<State>> tree = new DepthFirstTree(rootNode,goalState);
-        BestFirstSearch<Node<State>> tree = new BestFirstSearch(rootNode,goalState);
+        //BestFirstSearch<Node<State>> tree = new BestFirstSearch(rootNode,goalState);
+        AStarTree<Node<State>> tree = new AStarTree(rootNode,goalState);
 
         tree.traverse();
 

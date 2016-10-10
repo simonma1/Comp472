@@ -6,9 +6,6 @@ import java.util.*;
 public class AStarTree<T> extends Tree<T> {
 
     private Map<String,Node> closedSet = new HashMap<String,Node>();
-    private int numOfMoves = 0;
-    private LinkedList<State> moves = new LinkedList();
-
 
     public AStarTree(Node<T> root, State goalState){
         super(root, goalState);

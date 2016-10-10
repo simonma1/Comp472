@@ -5,7 +5,6 @@ import java.util.*;
  */
 public class BestFirstSearch<T> extends Tree<T>{
     private Map<String,Node> closedSet = new HashMap<String,Node>();
-    private int numOfMoves = 0;
     private LinkedList<State> moves = new LinkedList();
 
 
@@ -72,7 +71,9 @@ public class BestFirstSearch<T> extends Tree<T>{
 
     public int calculateHeuristic(State state){
         //int heuristicValue = MisplacedTilesHeuristic.calculateHeuristic(state, goalState);
-        int heuristicValue = ManhattanDistanceHeuristic.calculateHeuristic(state, goalState);
+        //int heuristicValue = ManhattanDistanceHeuristic.calculateHeuristic(state, goalState);
+        int heuristicValue = NilssonScoreHeuristic.calculateHeuristic(state, goalState);
+
         return heuristicValue;
     }
 

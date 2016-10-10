@@ -1,6 +1,7 @@
 import com.sun.jmx.remote.internal.ArrayQueue;
 
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -11,6 +12,8 @@ public abstract class Tree<T> {
     protected Collection<Node<T>> fringe;
     protected State  goalState;
     protected boolean goalStateFound = false;
+    protected int numOfMoves = 0;
+    protected LinkedList<State> moves = new LinkedList();
 
 
     public Tree(Node<T> root){
